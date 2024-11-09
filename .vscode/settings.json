@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "stdint.h": "c",
+        "gb.h": "c",
+        "text.h": "c",
+        "metasprites.h": "c",
+        "coinsprite.h": "c",
+        "hud.h": "c",
+        "gbdksaveexamplebackground.h": "c",
+        "player.h": "c"
+    }
+}
