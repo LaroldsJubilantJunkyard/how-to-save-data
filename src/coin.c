@@ -37,10 +37,8 @@ void RandomlyRePositionCoin(void){
     }while(IsPlayerCollidingWithCoin());
 }
 
-uint8_t UpdateCoin(void){
-
+void DrawCoin(void){
     
     move_metasprite_ex(CoinSprite_metasprites[0],PlayerSprite_TILE_COUNT,0,2,coinX+8,coinY+16);
 
-    return IsPlayerCollidingWithCoin();
 }

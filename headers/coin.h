@@ -7,6 +7,6 @@
 extern int16_t coinX, coinY;
 extern uint8_t coinCount;
 
-uint8_t UpdateCoin(void);
+void DrawCoin(void);
 
 #endif
