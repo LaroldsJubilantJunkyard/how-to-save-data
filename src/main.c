@@ -13,8 +13,6 @@
 #include "coin.h"
 #include "saved_data.h"
 
-
-
 uint8_t HasExistingSave(void){
 
     uint8_t saveDataExists = FALSE;
