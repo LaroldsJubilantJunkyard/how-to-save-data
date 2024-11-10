@@ -38,6 +38,7 @@ LCCFLAGS += -Iinclude -Iheaders -Igen
 
 all:	prepare png2asset $(BINS)
 
+# This creates a 'saved-data.o' file in the 'obj' folder
 obj/saved-data.o: saved-data.c
 	$(LCC) $(LCCFLAGS) -Wf-ba0 -c -o obj/saved-data.o saved-data.c
 
@@ -52,7 +53,7 @@ compile.bat: Makefile
 	@make -sn | sed y/\\//\\\\/ | sed s/mkdir\ -p\/mkdir\/ | grep -v make >> compile.bat
 
 
-# Link the compiled object files into a .gb ROM file
+# This creates our .gb file
 $(BINS):	$(CSOURCES) obj/saved-data.o
 	$(LCC) $(LCCFLAGS) -Wm-yt3 -Wm-yoA -Wm-ya1 -o $(BINS) $(CSOURCES) obj/saved-data.o
 
