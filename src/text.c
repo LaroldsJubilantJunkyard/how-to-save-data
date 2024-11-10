@@ -1,8 +1,6 @@
 #include <gb/gb.h>
 #include <stdint.h>
 #include "Font.h"
-
-
 uint8_t GetCharacterVRamTile(char character) {
 
     uint8_t vramTile=0;
@@ -11,19 +9,22 @@ uint8_t GetCharacterVRamTile(char character) {
     // Char's can be interpreted as integers
     // We don't need to map every alpha-numeric character
     // We can use basic math to simplify A-Z and 0-9
-    if(character>='a'&&character<='z')vramTile = (character-'a')+1;
-    else if(character>='A'&&character<='Z')vramTile = (character-'A')+1;
-    else if(character>='0'&&character<='9')vramTile = (character-'0')+27;
-    else if(character=='!')vramTile = 37;
-    else if(character==':')vramTile = 38;
-    else if(character=='?')vramTile = 39;
-    else if(character=='/')vramTile = 40;
-    else if(character=='=')vramTile = 41;
-    else if(character==',')vramTile = 42;
-    else if(character=='.')vramTile = 43;
-    else if(character=='<')vramTile = 44;
-    else if(character=='>')vramTile = 45;
-
+    if(character >='a'&&character <= 'z')vramTile = (character-'a')+1;
+    else if(character >= 'A'&&character <= 'Z')vramTile = (character-'A')+1;
+    else if(character >= '0'&&character <= '9')vramTile = (character-'0')+27;
+    else {
+        switch(character) {
+            case '!': vramTile = 37; break;
+            case ':': vramTile = 38; break;
+            case '?': vramTile = 39; break;
+            case '/': vramTile = 40; break;
+            case '=': vramTile = 41; break;
+            case ',': vramTile = 42; break;
+            case '.': vramTile = 43; break;
+            case '<': vramTile = 44; break;
+            case '>': vramTile = 45; break;
+        }
+    }
 
     return vramTile;
 
